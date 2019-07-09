@@ -1,0 +1,13 @@
+{
+    "project": [
+        {
+            "author": "Michael Peters",
+            "projectName": "lkapi",
+            "version": "0.0.1",
+            "description": "this is a REST api interface to go alongside LetterkennyQuotes",
+            "longDescription": "this api uses Express to serve a json file including a quote, number, and designation",
+            "githubLink": "https://github.com/michaelpeterswa/lkapi",
+            "date": "07.09.2019"
+        }
+    ]
+}
