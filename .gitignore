@@ -1,0 +1,5 @@
+# private keys and such (if necessary)
+secrets.js
+
+# npm stuff
+node_modules/

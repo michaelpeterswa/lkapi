@@ -1,0 +1,27 @@
+{
+  "name": "lkapi",
+  "version": "0.0.1",
+  "description": "this is a REST api interface to go alongside LetterkennyQuotes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Starting server...\" &&  node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelpeterswa/lkapi.git"
+  },
+  "keywords": [
+    "rest"
+  ],
+  "author": "Michael Peters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelpeterswa/lkapi/issues"
+  },
+  "homepage": "https://github.com/michaelpeterswa/lkapi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
