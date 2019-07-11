@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"Starting server...\" &&  node server.js"
+    "start": "echo \"Starting server...\" &&  node src/server.js"
   },
   "repository": {
     "type": "git",
