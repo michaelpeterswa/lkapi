@@ -62,7 +62,7 @@ app.get('/', function(req, res) {
 app.get('/api', function (req, res) {
     processFile(content)
     console.log("main request made")
-    res.send({
+    res.status(200).json({
     quote: quote,
     id: id,
     sfw: "maybe"
@@ -72,7 +72,7 @@ app.get('/api', function (req, res) {
 app.get('/api-sfw', function (req, res) {
     processFile(contentSFW)
     console.log("sfw request made")
-    res.send({
+    res.status(200).json({
     quote: quote,
     id: id,
     sfw: "yes"
@@ -82,7 +82,7 @@ app.get('/api-sfw', function (req, res) {
 app.get('/api-nsfw', function (req, res) {
     processFile(contentNSFW)
     console.log("nsfw request made")
-    res.send({
+    res.status(200).json({
     quote: quote,
     id: id,
     sfw: "no"
@@ -92,9 +92,11 @@ app.get('/styles/styles.css', function(req, res) {
     res.sendFile(path.join(__dirname + '/../html/styles/styles.css'));
   });
 
-app.listen(port, () => console.log(`LetterkennyAPI server app listening on port ${port}!`))
+const server = app.listen(port, () => console.log(`LetterkennyAPI server app listening on port ${port}!\n`))
 
 app.use(function (req, res, next) {
     res.status(404).sendFile(path.join(__dirname + '/../html/404.html'));
     res.status(404).sendFile(path.join(__dirname + '/../html/styles/styles.css'));
   })
+
+module.exports = server
