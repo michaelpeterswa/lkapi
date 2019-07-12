@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // letterkennyQuotes api
 // TESTING FILE
 // Michael Peters

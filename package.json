@@ -4,7 +4,10 @@
   "description": "this is a REST api interface to go alongside LetterkennyQuotes",
   "main": "server.js",
   "scripts": {
-    "test": "./test.sh",
+    "test": "./test/test.sh",
+    "clean": "./scripts/clean.sh",
+    "update": "./scripts/update.sh",
+    "run-docker": "./scripts/run.sh",
     "start": "echo \"Starting server...\" &&  node src/server.js"
   },
   "repository": {
@@ -25,5 +28,8 @@
     "express": "^4.17.1",
     "mocha": "^6.1.4",
     "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1"
   }
 }

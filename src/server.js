@@ -94,7 +94,7 @@ app.get('/styles/styles.css', function(req, res) {
 
 const server = app.listen(port, () => console.log(`LetterkennyAPI server app listening on port ${port}!\n`))
 
-app.use(function (req, res, next) {
+app.use(function (req, res) {
     res.status(404).sendFile(path.join(__dirname + '/../html/404.html'));
     res.status(404).sendFile(path.join(__dirname + '/../html/styles/styles.css'));
   })

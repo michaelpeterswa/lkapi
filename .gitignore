@@ -3,3 +3,6 @@ secrets.js
 
 # npm stuff
 node_modules/
+
+# conf
+.lkconf
