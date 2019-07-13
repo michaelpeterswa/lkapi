@@ -5,6 +5,10 @@
 
 this is a REST api interface to go alongside LetterkennyQuotes
 > this api uses Express to serve a json file including a quote, number, and designation
+
+![Alt text](img/lkapi1.png?raw=true "Webpage")
+![Alt text](img/lkapi2.png?raw=true "JSON endpoint")
+
 ## Installation
 ```
 git clone https://github.com/michaelpeterswa/lkapi.git
