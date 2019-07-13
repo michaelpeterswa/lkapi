@@ -12,3 +12,6 @@ node_modules/
 
 # codecov.io token
 scripts/ci.sh
+
+# all the coverage
+coverage/
