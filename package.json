@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "./test/test.sh",
+    "ci": "./scripts/ci.sh",
     "clean": "./scripts/clean.sh",
     "update": "./scripts/update.sh",
     "run-docker": "./scripts/run.sh",
