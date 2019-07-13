@@ -23,23 +23,24 @@ var quote
 var id = 0
 // First I want to read the file
 fs.readFile(mainPath, 'utf8', function read(err, data) {
-    if (err) {
-        throw err
-    }
+    // should never error as files exist
+    // if (err) {
+    //     throw err
+    // }
     content = data
 })
 //nsfw
 fs.readFile(nsfwPath, 'utf8', function read(err, data) {
-    if (err) {
-        throw err
-    }
+    // if (err) {
+    //     throw err
+    // }
     contentNSFW = data
 })
 //sfw
 fs.readFile(sfwPath, 'utf8', function read(err, data) {
-    if (err) {
-        throw err
-    }
+    // if (err) {
+    //     throw err
+    // }
     contentSFW = data
 })
 

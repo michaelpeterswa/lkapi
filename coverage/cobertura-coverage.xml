@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="50" lines-covered="47" line-rate="0.94" branches-valid="6" branches-covered="3" branch-rate="0.5" timestamp="1562957346156" complexity="0" version="0.1">
+<coverage lines-valid="44" lines-covered="44" line-rate="1" branches-valid="0" branches-covered="0" branch-rate="1" timestamp="1562992292698" complexity="0" version="0.1">
   <sources>
     <source>/home/michael/code/lkapi</source>
   </sources>
   <packages>
-    <class name="server.js" filename="src/server.js" line-rate="0.94" branch-rate="0.5">
+    <class name="server.js" filename="src/server.js" line-rate="1" branch-rate="1">
       <methods>
         <method name="read" hits="1" signature="()V">
           <lines>
@@ -14,52 +14,52 @@
         </method>
         <method name="read" hits="1" signature="()V">
           <lines>
-            <line number="32" hits="1"/>
+            <line number="33" hits="1"/>
           </lines>
         </method>
         <method name="read" hits="1" signature="()V">
           <lines>
-            <line number="39" hits="1"/>
+            <line number="40" hits="1"/>
           </lines>
         </method>
         <method name="processFile" hits="3" signature="()V">
           <lines>
-            <line number="46" hits="3"/>
+            <line number="47" hits="3"/>
           </lines>
         </method>
         <method name="(anonymous_4)" hits="1" signature="()V">
           <lines>
-            <line number="57" hits="1"/>
+            <line number="58" hits="1"/>
           </lines>
         </method>
         <method name="(anonymous_5)" hits="1" signature="()V">
           <lines>
-            <line number="62" hits="1"/>
+            <line number="63" hits="1"/>
           </lines>
         </method>
         <method name="(anonymous_6)" hits="1" signature="()V">
           <lines>
-            <line number="72" hits="1"/>
+            <line number="73" hits="1"/>
           </lines>
         </method>
         <method name="(anonymous_7)" hits="1" signature="()V">
           <lines>
-            <line number="82" hits="1"/>
+            <line number="83" hits="1"/>
           </lines>
         </method>
         <method name="(anonymous_8)" hits="1" signature="()V">
           <lines>
-            <line number="91" hits="1"/>
+            <line number="92" hits="1"/>
           </lines>
         </method>
         <method name="(anonymous_9)" hits="1" signature="()V">
           <lines>
-            <line number="95" hits="1"/>
+            <line number="96" hits="1"/>
           </lines>
         </method>
         <method name="(anonymous_10)" hits="1" signature="()V">
           <lines>
-            <line number="97" hits="1"/>
+            <line number="98" hits="1"/>
           </lines>
         </method>
       </methods>
@@ -75,45 +75,39 @@
         <line number="17" hits="1" branch="false"/>
         <line number="23" hits="1" branch="false"/>
         <line number="25" hits="1" branch="false"/>
-        <line number="26" hits="1" branch="true" condition-coverage="50% (1/2)"/>
-        <line number="27" hits="0" branch="false"/>
-        <line number="29" hits="1" branch="false"/>
-        <line number="32" hits="1" branch="false"/>
-        <line number="33" hits="1" branch="true" condition-coverage="50% (1/2)"/>
-        <line number="34" hits="0" branch="false"/>
-        <line number="36" hits="1" branch="false"/>
-        <line number="39" hits="1" branch="false"/>
-        <line number="40" hits="1" branch="true" condition-coverage="50% (1/2)"/>
-        <line number="41" hits="0" branch="false"/>
-        <line number="43" hits="1" branch="false"/>
-        <line number="47" hits="3" branch="false"/>
+        <line number="30" hits="1" branch="false"/>
+        <line number="33" hits="1" branch="false"/>
+        <line number="37" hits="1" branch="false"/>
+        <line number="40" hits="1" branch="false"/>
+        <line number="44" hits="1" branch="false"/>
         <line number="48" hits="3" branch="false"/>
         <line number="49" hits="3" branch="false"/>
         <line number="50" hits="3" branch="false"/>
         <line number="51" hits="3" branch="false"/>
         <line number="52" hits="3" branch="false"/>
-        <line number="55" hits="1" branch="false"/>
-        <line number="57" hits="1" branch="false"/>
+        <line number="53" hits="3" branch="false"/>
+        <line number="56" hits="1" branch="false"/>
         <line number="58" hits="1" branch="false"/>
-        <line number="62" hits="1" branch="false"/>
+        <line number="59" hits="1" branch="false"/>
         <line number="63" hits="1" branch="false"/>
         <line number="64" hits="1" branch="false"/>
         <line number="65" hits="1" branch="false"/>
-        <line number="72" hits="1" branch="false"/>
+        <line number="66" hits="1" branch="false"/>
         <line number="73" hits="1" branch="false"/>
         <line number="74" hits="1" branch="false"/>
         <line number="75" hits="1" branch="false"/>
-        <line number="82" hits="1" branch="false"/>
+        <line number="76" hits="1" branch="false"/>
         <line number="83" hits="1" branch="false"/>
         <line number="84" hits="1" branch="false"/>
         <line number="85" hits="1" branch="false"/>
-        <line number="91" hits="1" branch="false"/>
+        <line number="86" hits="1" branch="false"/>
         <line number="92" hits="1" branch="false"/>
-        <line number="95" hits="1" branch="false"/>
-        <line number="97" hits="1" branch="false"/>
+        <line number="93" hits="1" branch="false"/>
+        <line number="96" hits="1" branch="false"/>
         <line number="98" hits="1" branch="false"/>
         <line number="99" hits="1" branch="false"/>
-        <line number="102" hits="1" branch="false"/>
+        <line number="100" hits="1" branch="false"/>
+        <line number="103" hits="1" branch="false"/>
       </lines>
     </class>
   </packages>
