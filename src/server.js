@@ -44,6 +44,25 @@ fs.readFile(sfwPath, 'utf8', function read(err, data) {
     contentSFW = data
 })
 
+//hopefully this function will replace the above three readfile calls, it errors 
+//  rn tho and i gotta sleep
+
+// // eslint-disable-next-line no-unused-vars
+// function readFileWithPathAndContentVars(path, contentVar) {
+//     fs.readFile(path, 'utf8', function read(err, data) {
+//         if (err) {
+//             throw err
+//         }
+//         contentVar = data
+//     })
+// }
+
+// /////
+// readFileWithPathAndContentVars(mainPath, content)
+// readFileWithPathAndContentVars(sfwPath, contentSFW)
+// readFileWithPathAndContentVars(nsfwPath, contentNSFW)
+// /////
+
 function processFile(message) {
     var data = JSON.parse(message)
     var length = data.length
