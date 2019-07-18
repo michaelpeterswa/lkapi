@@ -60,3 +60,12 @@ describe('GET /styles/styles.css', function() {
         .expect(200, done);
     });
 });
+
+describe('GET /api-broken', function() {
+    it('ensure error functions work', function(done) {
+    request(app)
+        .get('/api-broken')
+        .expect('Content-Type', /html/)
+        .expect(501, done);
+    });
+});
