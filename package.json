@@ -9,7 +9,9 @@
     "clean": "./scripts/clean.sh",
     "update": "./scripts/update.sh",
     "run-docker": "./scripts/run.sh",
-    "start": "echo \"Starting server...\" &&  node src/server.js"
+    "start": "echo \"Starting server...\" &&  node src/server.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -28,10 +30,12 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mocha": "^6.1.4",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
     "nyc": "^14.1.1"
-  }
+  },
+  "snyk": true
 }
