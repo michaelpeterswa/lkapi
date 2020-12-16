@@ -1,6 +1,7 @@
 // letterkennyQuotes api
 // Michael Peters
 // July 12, 2019
+// revived in time for Season 9 -- December 16, 2020
 
 const express = require('express')
 var cors = require('cors')
@@ -10,19 +11,13 @@ var path = require('path');
 const app = express()
 
 const mainPath = "./resources/main.json"
-const sfwPath = "./resources/sfw.json"
-const nsfwPath = "./resources/nsfw.json"
-const brokenPath = "./resources/nonexistant.json"
-//const json = JSON.parse(full);
 
 //port the app is currently serving to
 const port = 6969
 
 var content
-var contentSFW
-var contentNSFW
-var contentBroken
 var quote
+var sfw
 var id = 0
 
 // eslint-disable-next-line no-unused-vars
@@ -36,28 +31,48 @@ function readFileWithPathAndContent(path, callback) {
     
 }
 
-/// Read from the three files //
+/// Read from the main.json file //
 readFileWithPathAndContent(mainPath, function(response){
     content = response
     })
-readFileWithPathAndContent(sfwPath, function(response){
-    contentSFW = response
-    })
-readFileWithPathAndContent(nsfwPath, function(response){
-    contentNSFW = response
-    })
-readFileWithPathAndContent(brokenPath, function(response){
-    contentBroken = response
-    })
 ////////////////////////////////
 
-function processFile(message) {
-    var data = JSON.parse(message)
-    var length = data.length
+function generateRandomWithLength(length){
     var randomNum = Math.floor(Math.random() * length)
-    var randomQuote = data[randomNum]
-    quote = randomQuote
-    id = randomNum
+    return randomNum
+}
+
+function setQuoteAndData(num, quoteData){
+        quote = quoteData[0]
+        id = num
+        sfw = quoteData[1]    
+}
+
+function processFile(message, status) {
+    var data = JSON.parse(message)
+    var length = data.all.length
+    var randomNum = generateRandomWithLength(length)
+    data = data.all
+    if (status === "all"){
+        var randomQuote = data[randomNum]
+        setQuoteAndData(randomNum, randomQuote)
+    }
+    else if (status === "sfw"){
+        randomQuote = data[randomNum]
+        while(randomQuote[1] != "sfw"){
+            randomNum = generateRandomWithLength(length)
+            randomQuote = data[randomNum]
+        }
+        setQuoteAndData(randomNum, randomQuote)      
+    }
+    else {
+        randomQuote = data[randomNum]
+        while(randomQuote[1] != "nsfw"){
+            randomNum = generateRandomWithLength(length)
+            randomQuote = data[randomNum]
+        }
+        setQuoteAndData(randomNum, randomQuote)
+    }
 }
 
 app.use(cors());
@@ -68,80 +83,38 @@ app.get('/', function(req, res) {
 
 //lkapi main endpoint (JSON)
 app.get('/api', function (req, res) {
-    processFile(content)
-    console.log("main request made")
-    // if (quote == "an error occured - file not found"){
-    //     res.status(501).send('501 - json file not found.')
-    // }
-    // else {
+    processFile(content, "all")
     res.status(200).json({
     quote: quote,
     id: id,
-    sfw: "maybe"
+    sfw: sfw
     })
-    // }
 })
-
-//SFW endpoint (JSON)
-app.get('/api-sfw', function (req, res) {
-    processFile(contentSFW)
-    console.log("sfw request made")
-    // if (quote == "an error occured - file not found"){
-    //     res.status(501).send('501 - json file not found.')
-    // }
-    // else {
+app.get('/sfw', function (req, res) {
+    processFile(content, "sfw")
     res.status(200).json({
     quote: quote,
     id: id,
-    sfw: "yes"
+    sfw: sfw
     })
-    // }
 })
-
-//NSFW endpoint (JSON)
-app.get('/api-nsfw', function (req, res) {
-    processFile(contentNSFW)
-    console.log("nsfw request made")
-    // if (quote == "an error occured - file not found"){
-    //     res.status(501).send('501 - json file not found.')
-    // }
-    // else {
+app.get('/nsfw', function (req, res) {
+    processFile(content, "nsfw")
     res.status(200).json({
     quote: quote,
     id: id,
-    sfw: "no"
+    sfw: sfw
     })
-    // }
-})
-
-//broken endpoint (JSON -- TESTING ONLY)
-app.get('/api-broken', function (req, res) {
-    processFile(contentBroken)
-    console.log("broken request made")
-    
-    //if is guaranteed in this case
-    //if (quote == "an error occured - file not found"){
-    res.status(501).send('501 - json file not found.')
-    //}
-    
-    // else {
-    // res.status(200).json({
-    // quote: quote,
-    // id: id,
-    // sfw: "no"
-    // })
-    // }
 })
 
 app.get('/styles/styles.css', function(req, res) {
     res.sendFile(path.join(__dirname + '/../html/styles/styles.css'));
   });
 
-const server = app.listen(port, () => console.log(`LetterkennyAPI server app listening on port ${port}!\n`))
-
 app.use(function (req, res) {
     res.status(404).sendFile(path.join(__dirname + '/../html/404.html'));
-    res.status(404).sendFile(path.join(__dirname + '/../html/styles/styles.css'));
-  })
+})
+
+const server = app.listen(port, () => console.log(`LetterkennyAPI server app listening on port ${port}!\n`))
 
 module.exports = server

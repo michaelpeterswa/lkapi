@@ -24,19 +24,19 @@ describe('GET /api', function() {
     });
 });
 
-describe('GET /api-sfw', function() {
+describe('GET /sfw', function() {
     it('main endpoint responds with valid sfw json api output', function(done) {
     request(app)
-        .get('/api-sfw')
+        .get('/sfw')
         .expect('Content-Type', /json/)
         .expect(200, done);
     });
 });
 
-describe('GET /api-nsfw', function() {
+describe('GET /nsfw', function() {
     it('main endpoint responds with valid nsfw json api output', function(done) {
     request(app)
-        .get('/api-nsfw')
+        .get('/nsfw')
         .expect('Content-Type', /json/)
         .expect(200, done);
     });
@@ -58,14 +58,5 @@ describe('GET /styles/styles.css', function() {
         .get('/styles/styles.css')
         .expect('Content-Type', /css/)
         .expect(200, done);
-    });
-});
-
-describe('GET /api-broken', function() {
-    it('ensure error functions work', function(done) {
-    request(app)
-        .get('/api-broken')
-        .expect('Content-Type', /html/)
-        .expect(501, done);
     });
 });

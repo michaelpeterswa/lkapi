@@ -4,12 +4,12 @@
   "description": "this is a REST api interface to go alongside LetterkennyQuotes",
   "main": "server.js",
   "scripts": {
-    "test": "./test/test.sh",
+    "test": "npx nyc --reporter=json-summary --reporter=html --reporter=cobertura --reporter=text-summary mocha --exit",
     "ci": "./scripts/ci.sh",
     "clean": "./scripts/clean.sh",
     "update": "./scripts/update.sh",
     "run-docker": "./scripts/run.sh",
-    "start": "echo \"Starting server...\" &&  node src/server.js"
+    "start": "echo \"Starting server...\" &&  nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mocha": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "standard-version": "^9.0.0",
     "supertest": "^4.0.2"
   },
   "devDependencies": {
