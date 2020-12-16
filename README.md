@@ -4,6 +4,9 @@
 [![codecov](https://codecov.io/gh/michaelpeterswa/lkapi/branch/master/graph/badge.svg)](https://codecov.io/gh/michaelpeterswa/lkapi) [![Known Vulnerabilities](https://snyk.io/test/github/michaelpeterswa/lkapi/badge.svg)](https://snyk.io/test/github/michaelpeterswa/lkapi)  ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg) ![GitHub repo size](https://img.shields.io/github/repo-size/michaelpeterswa/lkapi.svg) ![GitHub issues](https://img.shields.io/github/issues/michaelpeterswa/lkapi.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/3876447b891bfba74e1c/maintainability)](https://codeclimate.com/github/michaelpeterswa/lkapi/maintainability)
 
 this is a REST api interface to go alongside LetterkennyQuotes
+```
+curl -s "https://cascades.dev/api" | jq -r '.quote' | lolcat -f
+```
 > this api uses Express to serve a json file including a quote, number, and designation
 
 ![Alt text](img/lkapi1.png?raw=true "Webpage")
@@ -13,6 +16,7 @@ this is a REST api interface to go alongside LetterkennyQuotes
 ```
 git clone https://github.com/michaelpeterswa/lkapi.git
 ```
+
 Or download the file manually.
 ## Release History
 * 0.0.1
