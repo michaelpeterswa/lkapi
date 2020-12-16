@@ -1,15 +1,14 @@
 {
   "name": "lkapi",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "this is a REST api interface to go alongside LetterkennyQuotes",
   "main": "server.js",
   "scripts": {
     "test": "npx nyc --reporter=json-summary --reporter=html --reporter=cobertura --reporter=text-summary mocha --exit",
-    "ci": "./scripts/ci.sh",
-    "clean": "./scripts/clean.sh",
     "update": "./scripts/update.sh",
     "run-docker": "./scripts/run.sh",
-    "start": "echo \"Starting server...\" &&  nodemon src/server.js"
+    "start": "echo \"Starting server...\" &&  nodemon src/server.js",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
