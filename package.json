@@ -26,11 +26,11 @@
   "homepage": "https://github.com/michaelpeterswa/lkapi#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.22.0",
     "mocha": "^9.2.0",
     "nodemon": "^2.0.6",
     "standard-version": "^9.1.1",
-    "supertest": "^4.0.2"
+    "supertest": "^7.1.3"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
